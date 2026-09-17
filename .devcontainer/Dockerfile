@@ -38,7 +38,7 @@ RUN su - ${USERNAME} -c "conda config --append channels conda-forge && conda ins
 
 # Install IJulia and prepare the default IJulia kernel with JULIA_NUM_THREAS="auto" 
 RUN su - ${USERNAME} -c "julia -e 'using Pkg; Pkg.activate(temp=true); Pkg.add(name=\"IJulia\", version=${IJULIAVER}); \
-using IJulia; installkernel(\"julia\", env=Dict(\"JULIA_NUM_THREADS\"=>\"auto\"))'"
+using IJulia; installkernel(\"julia\", \"--project\", env=Dict(\"JULIA_NUM_THREADS\"=>\"auto\"))'"
 # RUN su - ${USERNAME} -c "julia -e 'ENV[\"PYTHON\"]=\"\"; using Pkg; Pkg.activate(temp=true); Pkg.add([\"IJulia\", \"PyPlot\"]); using PyPlot'"
 
 # Disable Jupyter annoyances
