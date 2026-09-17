@@ -6,6 +6,8 @@
    // "cpus": 4,
    // "memory": "16gb"
   // },
+
+  "forwardPorts": [8888], 
   
   // Free some disk space
   // "initializeCommand": "docker system prune --all --force",
