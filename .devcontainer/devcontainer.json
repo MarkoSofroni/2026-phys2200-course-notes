@@ -21,5 +21,5 @@
   // Install Julia packages as required by the provided Project.toml
   "waitFor": "postCreateCommand",
   "postCreateCommand": "/home/codespace/.juliaup/bin/julia -e 'using Pkg; Pkg.activate(\".\"); Pkg.instantiate()'",
-  "postStartCommand": "jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root &"
+  "postAttachCommand": "jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root &"
 }
