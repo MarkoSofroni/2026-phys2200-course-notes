@@ -6,6 +6,8 @@
    // "cpus": 4,
    // "memory": "16gb"
   // },
+
+  "forwardPorts": [8888], 
   
   // Free some disk space
   // "initializeCommand": "docker system prune --all --force",
@@ -18,5 +20,6 @@
   //
   // Install Julia packages as required by the provided Project.toml
   "waitFor": "postCreateCommand",
-  "postCreateCommand": "/home/codespace/.juliaup/bin/julia -e 'using Pkg; Pkg.activate(\".\"); Pkg.instantiate()'"
+  "postCreateCommand": "/home/codespace/.juliaup/bin/julia -e 'using Pkg; Pkg.activate(\".\"); Pkg.instantiate()'"//,
+  //"postAttachCommand": "jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root &"
 }
